@@ -23,11 +23,11 @@ DROP TABLE IF EXISTS `subthread`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `subthread` (
-  `stid` int(11) NOT NULL AUTO_INCREMENT COMMENT '子贴id',
-  `tid` int(11) DEFAULT NULL COMMENT '主贴id',
-  `revert` varchar(200) DEFAULT NULL COMMENT '回复信息',
-  `ruid` int(11) DEFAULT NULL,
-  `tuid` int(11) DEFAULT NULL,
+  `stid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'subthread id',
+  `tid` int(11) DEFAULT NULL COMMENT 'thread id',
+  `revert` varchar(200) DEFAULT NULL COMMENT 'reply',
+  `ruid` int(11) DEFAULT NULL COMMENT 'id of reply user',
+  `tuid` int(11) DEFAULT NULL COMMENT 'id of thread owner',
   PRIMARY KEY (`stid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -50,9 +50,9 @@ DROP TABLE IF EXISTS `thread`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `thread` (
-  `tid` int(11) NOT NULL AUTO_INCREMENT COMMENT '主贴id',
-  `uid` int(11) DEFAULT NULL COMMENT '用户id',
-  `topic` text,
+  `tid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'thread id',
+  `uid` int(11) DEFAULT NULL COMMENT 'id of user',
+  `topic` text COMMENT 'topic',
   PRIMARY KEY (`tid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -75,11 +75,11 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `uid` int(11) NOT NULL AUTO_INCREMENT COMMENT '用户id',
-  `email` varchar(100) DEFAULT NULL COMMENT '邮箱',
-  `username` varchar(100) DEFAULT NULL COMMENT '用户名',
+  `uid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'user id',
+  `email` varchar(100) DEFAULT NULL COMMENT 'email',
+  `username` varchar(100) DEFAULT NULL COMMENT 'username',
   PRIMARY KEY (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
